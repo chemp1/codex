@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Участники сообщества heg.ai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f7fb;
+        --surface: #ffffff;
+        --surface-muted: #eef1ff;
+        --text-primary: #111827;
+        --text-secondary: #5f6c86;
+        --accent: #4656ff;
+        --accent-soft: rgba(70, 86, 255, 0.08);
+        --accent-strong: rgba(70, 86, 255, 0.18);
+        --border: rgba(17, 24, 39, 0.06);
+        --shadow-soft: 0 18px 50px rgba(43, 60, 136, 0.12);
+        --shadow-card: 0 22px 55px rgba(28, 44, 107, 0.16);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Onest", system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--text-primary);
+      }
+
+      .page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        position: relative;
+        padding: 72px 24px 120px;
+        overflow: hidden;
+        background: linear-gradient(150deg, #f7f8ff 0%, #f3f6ff 55%, #eef3ff 100%);
+      }
+
+      header::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 12% 18%,
+          rgba(70, 86, 255, 0.22),
+          transparent 58%
+        ),
+          radial-gradient(
+            circle at 88% 24%,
+            rgba(111, 200, 255, 0.18),
+            transparent 52%
+          );
+        pointer-events: none;
+      }
+
+      .hero {
+        position: relative;
+        max-width: 1140px;
+        margin: 0 auto;
+        display: grid;
+        gap: 32px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.85);
+        color: var(--accent);
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        box-shadow: 0 8px 20px rgba(70, 86, 255, 0.15);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .nav-links a {
+        padding: 10px 14px;
+        color: rgba(17, 24, 39, 0.78);
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: 12px;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.65);
+        color: var(--accent);
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--accent);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(36px, 5vw, 56px);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-description {
+        max-width: 720px;
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.7;
+        color: rgba(17, 24, 39, 0.72);
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+      }
+
+      .stat-card {
+        padding: 18px 20px;
+        background: rgba(255, 255, 255, 0.72);
+        border-radius: 20px;
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .stat-card span {
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-secondary);
+      }
+
+      .stat-card strong {
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--accent);
+      }
+
+      main {
+        flex: 1;
+        margin-top: -72px;
+        padding: 0 24px 96px;
+      }
+
+      .content {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: grid;
+        gap: 32px;
+      }
+
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 22px;
+        background: var(--surface);
+        border-radius: 28px;
+        box-shadow: var(--shadow-soft);
+        border: 1px solid var(--border);
+      }
+
+      .filter-button {
+        padding: 12px 18px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        background: rgba(70, 86, 255, 0.08);
+        color: var(--accent);
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .filter-button.secondary {
+        background: transparent;
+        color: var(--text-secondary);
+        border-color: rgba(17, 24, 39, 0.08);
+      }
+
+      .filter-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px rgba(70, 86, 255, 0.18);
+      }
+
+      .grid {
+        display: grid;
+        gap: 28px;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      }
+
+      .member-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 28px;
+        border-radius: 26px;
+        background: var(--surface);
+        border: 1px solid rgba(70, 86, 255, 0.08);
+        box-shadow: var(--shadow-card);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .member-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 26px 65px rgba(28, 44, 107, 0.18);
+      }
+
+      .member-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(135deg, rgba(70, 86, 255, 0.28), rgba(70, 86, 255, 0));
+        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+
+      .member-header {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .member-avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 22px;
+        overflow: hidden;
+        background: var(--accent-soft);
+        display: grid;
+        place-items: center;
+        font-size: 32px;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .member-meta h3 {
+        margin: 0;
+        font-size: 22px;
+        letter-spacing: -0.01em;
+      }
+
+      .member-meta span {
+        display: block;
+        margin-top: 4px;
+        color: var(--text-secondary);
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag {
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: var(--surface-muted);
+        color: #3d4acf;
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      .member-description {
+        margin: 0;
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      .member-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .stats {
+        display: flex;
+        gap: 16px;
+      }
+
+      .stats div {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: 14px;
+        color: var(--text-secondary);
+      }
+
+      .stats strong {
+        font-size: 18px;
+        color: var(--text-primary);
+      }
+
+      .view-link {
+        padding: 12px 18px;
+        border-radius: 14px;
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 18px 30px rgba(70, 86, 255, 0.25);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .view-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 36px rgba(70, 86, 255, 0.32);
+      }
+
+      .cta-block {
+        margin-top: 12px;
+        padding: 36px 40px;
+        border-radius: 32px;
+        background: linear-gradient(135deg, #4656ff, #6ec7ff);
+        color: white;
+        display: grid;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .cta-block p {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.6;
+        opacity: 0.85;
+      }
+
+      .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .cta-actions a {
+        padding: 12px 20px;
+        border-radius: 999px;
+        font-weight: 600;
+        text-decoration: none;
+        color: #4656ff;
+        background: white;
+      }
+
+      footer {
+        padding: 48px 24px;
+        color: rgba(17, 24, 39, 0.6);
+        text-align: center;
+        font-size: 14px;
+      }
+
+      @media (max-width: 720px) {
+        header {
+          padding: 48px 20px 96px;
+        }
+
+        .member-footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .stats {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .view-link {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="hero">
+          <nav>
+            <div class="logo">heg.ai community</div>
+            <div class="nav-links">
+              <a href="#participants">Участники</a>
+              <a href="#formats">Форматы</a>
+              <a href="#join">Вступить</a>
+            </div>
+          </nav>
+
+          <div class="hero-eyebrow">сообщество создателей ai</div>
+          <h1>Люди, которые строят будущее в heg.ai</h1>
+          <p class="hero-description">
+            Собрали участников комьюнити — исследователей, фаундеров и дизайнеров, которые
+            создают продукты на стыке AI и человеческого опыта. Фильтруйте по направлениям и
+            находите людей для сотрудничества.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span>участников</span>
+              <strong>128</strong>
+            </div>
+            <div class="stat-card">
+              <span>городов</span>
+              <strong>11</strong>
+            </div>
+            <div class="stat-card">
+              <span>клубных проектов</span>
+              <strong>37</strong>
+            </div>
+            <div class="stat-card">
+              <span>форматов встреч</span>
+              <strong>5</strong>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div id="participants" class="content">
+          <div class="filters">
+            <button class="filter-button">Все направления</button>
+            <button class="filter-button secondary">AI продакты</button>
+            <button class="filter-button secondary">Исследования</button>
+            <button class="filter-button secondary">Дизайн</button>
+            <button class="filter-button secondary">Сооснователи</button>
+            <button class="filter-button secondary">Комьюнити</button>
+            <button class="filter-button secondary">Инженерия</button>
+          </div>
+
+          <section class="grid" aria-label="Список участников">
+            <article class="member-card">
+              <div class="member-header">
+                <div class="member-avatar" aria-hidden="true">AV</div>
+                <div class="member-meta">
+                  <h3>Алексей Воронов</h3>
+                  <span>Сооснователь &amp; CEO @ sense.studio</span>
+                </div>
+              </div>
+              <div class="tags">
+                <span class="tag">AI-продукты</span>
+                <span class="tag">Маркетинг</span>
+                <span class="tag">B2B SaaS</span>
+              </div>
+              <p class="member-description">
+                Выстраивает продуктовую стратегию для генеративных инструментов. Работает с командами
+                стартапов и корпораций, чтобы запускать MVP и масштабировать AI-функциональность.
+              </p>
+              <div class="member-footer">
+                <div class="stats">
+                  <div>
+                    <span>проектов</span>
+                    <strong>12</strong>
+                  </div>
+                  <div>
+                    <span>лет в индустрии</span>
+                    <strong>9</strong>
+                  </div>
+                </div>
+                <a class="view-link" href="participant.html">Профиль</a>
+              </div>
+            </article>
+
+            <article class="member-card">
+              <div class="member-header">
+                <div class="member-avatar" aria-hidden="true">DS</div>
+                <div class="member-meta">
+                  <h3>Дарья Соколова</h3>
+                  <span>Design Lead @ heg.ai</span>
+                </div>
+              </div>
+              <div class="tags">
+                <span class="tag">Дизайн</span>
+                <span class="tag">AI UX</span>
+                <span class="tag">Мастерские</span>
+              </div>
+              <p class="member-description">
+                Исследует пользовательские сценарии для человеческо-ориентированных AI интерфейсов.
+                Менторит дизайнеров и развивает комьюнити практиков.
+              </p>
+              <div class="member-footer">
+                <div class="stats">
+                  <div>
+                    <span>кейсов</span>
+                    <strong>18</strong>
+                  </div>
+                  <div>
+                    <span>воркшопов</span>
+                    <strong>24</strong>
+                  </div>
+                </div>
+                <a class="view-link" href="participant.html">Профиль</a>
+              </div>
+            </article>
+
+            <article class="member-card">
+              <div class="member-header">
+                <div class="member-avatar" aria-hidden="true">IM</div>
+                <div class="member-meta">
+                  <h3>Игорь Мельников</h3>
+                  <span>ML Researcher @ neural.labs</span>
+                </div>
+              </div>
+              <div class="tags">
+                <span class="tag">ML Research</span>
+                <span class="tag">LLM</span>
+                <span class="tag">Open Source</span>
+              </div>
+              <p class="member-description">
+                Работает над адаптациями больших языковых моделей под русскоязычные домены. Инициатор
+                open-source инициативы по дообучению локальных LLM.
+              </p>
+              <div class="member-footer">
+                <div class="stats">
+                  <div>
+                    <span>публикаций</span>
+                    <strong>7</strong>
+                  </div>
+                  <div>
+                    <span>контрибьюторов</span>
+                    <strong>35</strong>
+                  </div>
+                </div>
+                <a class="view-link" href="participant.html">Профиль</a>
+              </div>
+            </article>
+
+            <article class="member-card">
+              <div class="member-header">
+                <div class="member-avatar" aria-hidden="true">KT</div>
+                <div class="member-meta">
+                  <h3>Ксения Тарасова</h3>
+                  <span>Community Builder @ heg.ai</span>
+                </div>
+              </div>
+              <div class="tags">
+                <span class="tag">Комьюнити</span>
+                <span class="tag">Встречи</span>
+                <span class="tag">Партнёрства</span>
+              </div>
+              <p class="member-description">
+                Курирует программы нетворкинга и коллабораций. Запускает тематические круги, помогает
+                участникам находить проекты и партнёров.
+              </p>
+              <div class="member-footer">
+                <div class="stats">
+                  <div>
+                    <span>ивентов</span>
+                    <strong>42</strong>
+                  </div>
+                  <div>
+                    <span>партнёрств</span>
+                    <strong>19</strong>
+                  </div>
+                </div>
+                <a class="view-link" href="participant.html">Профиль</a>
+              </div>
+            </article>
+          </section>
+
+          <section id="formats" class="cta-block">
+            <h2>Форматы встреч heg.ai</h2>
+            <p>
+              Еженедельные стендапы, лаборатории по исследованиям, демо-ночи и стратегические оффсайты.
+              Присоединяйтесь, чтобы получить поддержку, фидбек и партнёров для своих инициатив.
+            </p>
+            <div class="cta-actions">
+              <a href="#join">Заполнить форму</a>
+              <a href="mailto:team@heg.ai" style="background: rgba(255,255,255,0.18); color: white;">
+                Написать команде
+              </a>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer id="join">
+        <p>
+          heg.ai community · поддерживаем создателей, которые экспериментируют с AI и человеческим
+          опытом · присоединяйтесь к дискорду и закрытому клубу
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
