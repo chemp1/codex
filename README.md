@@ -40,3 +40,15 @@ Then open the following URLs in your browser:
 
 ## Directly opening the files
 Because the pages are static, you can also open `index.html` or `participant.html` directly by double-clicking them in your file manager. Running a local server is optional but helps mimic deployment conditions.
+
+## Troubleshooting
+
+### "It looks like the files didn't make it to Git"
+If you only see `README.md` after cloning, you are probably on the default branch that does not contain the latest pages yet. Check out the `work` branch where the layouts live:
+
+```bash
+git fetch origin
+git checkout work
+```
+
+You should now see both `index.html` and `participant.html` when you run `ls` in the repository root.
