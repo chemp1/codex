@@ -174,6 +174,24 @@ main {
   z-index: 1;
 }
 
+#participants.section {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.participants-surface {
+  background: var(--surface);
+  border-radius: 32px;
+  padding: 36px 40px 48px;
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-32px);
+}
+
+.participants-surface .section-header {
+  margin-bottom: 28px;
+}
+
 .section + .section {
   margin-top: 48px;
 }
@@ -431,7 +449,7 @@ footer {
 
 .profile-content {
   max-width: 1120px;
-  margin: -92px auto 0;
+  margin: -64px auto 0;
   display: grid;
   gap: 32px;
 }
@@ -512,11 +530,17 @@ footer {
 
 @media (max-width: 880px) {
   header {
-    padding: 72px 18px 112px;
+    padding: 78px 18px 132px;
   }
 
   main {
     padding: 0 18px 96px;
+  }
+
+  .participants-surface {
+    padding: 32px 28px 40px;
+    border-radius: 28px;
+    transform: translateY(-24px);
   }
 
   .section,
@@ -545,12 +569,17 @@ footer {
   }
 
   header {
-    padding-bottom: 136px;
+    padding-bottom: 152px;
   }
 
   .section {
     margin-top: -80px;
     border-radius: 26px;
+  }
+
+  .participants-surface {
+    transform: translateY(-18px);
+    padding: 28px 22px 36px;
   }
 
   .participants-grid {
@@ -568,6 +597,6 @@ footer {
   }
 
   .profile-content {
-    margin-top: -80px;
+    margin-top: -60px;
   }
 }
