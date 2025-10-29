@@ -43,9 +43,10 @@ a {
 
 header {
   position: relative;
-  padding: 96px 24px 140px;
+  padding: 96px 24px 180px;
   background: linear-gradient(145deg, #f6f7ff 0%, #eef3ff 55%, #e3ecff 100%);
   overflow: hidden;
+  z-index: 0;
 }
 
 header::after {
@@ -56,6 +57,12 @@ header::after {
     radial-gradient(circle at 88% 24%, rgba(111, 200, 255, 0.18), transparent 52%);
   pointer-events: none;
   filter: blur(0.5px);
+  z-index: -1;
+}
+
+header > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero {
@@ -449,9 +456,11 @@ footer {
 
 .profile-content {
   max-width: 1120px;
-  margin: -64px auto 0;
+  margin: clamp(-48px, -7vw, -24px) auto 0;
   display: grid;
   gap: 32px;
+  position: relative;
+  z-index: 1;
 }
 
 .profile-section {
@@ -530,7 +539,7 @@ footer {
 
 @media (max-width: 880px) {
   header {
-    padding: 78px 18px 132px;
+    padding: 78px 18px 150px;
   }
 
   main {
@@ -544,7 +553,6 @@ footer {
   }
 
   .section,
-  .profile-content,
   .profile-section {
     margin-top: 0;
   }
@@ -555,6 +563,10 @@ footer {
 
   .profile-section {
     padding: 28px;
+  }
+
+  .profile-content {
+    margin-top: clamp(-36px, -9vw, -18px);
   }
 }
 
@@ -569,7 +581,7 @@ footer {
   }
 
   header {
-    padding-bottom: 152px;
+    padding-bottom: 140px;
   }
 
   .section {
@@ -597,6 +609,6 @@ footer {
   }
 
   .profile-content {
-    margin-top: -60px;
+    margin-top: -24px;
   }
 }
