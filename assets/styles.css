@@ -114,6 +114,17 @@ nav {
   color: var(--accent);
 }
 
+.nav-links .nav-highlight {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(70, 86, 255, 0.22);
+}
+
+.nav-links .nav-highlight:hover {
+  background: #2f3cff;
+  color: #ffffff;
+}
+
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
