@@ -337,14 +337,13 @@ function renderActiveConversation() {
   elements.emptyState.style.display = hasMessages ? "none" : "";
 
   if (!conversation) {
-    renderQuickPrompts(elements.promptSuggestions, quickPrompts);
+    renderQuickPrompts(elements.emptyPrompts, quickPrompts);
     bindDynamicButtons();
     return;
   }
 
   if (!hasMessages) {
     renderQuickPrompts(elements.emptyPrompts, quickPrompts);
-    renderQuickPrompts(elements.promptSuggestions, quickPrompts.slice(0, 3));
     bindDynamicButtons();
     return;
   }
