@@ -26,7 +26,12 @@ body {
 }
 
 body.hegai-gpt {
+<<<<<<< HEAD
+  background: #f7f7f8;
+  color: #0c1524;
+=======
   background: linear-gradient(160deg, #f6f8ff 0%, #eef3ff 55%, #e7f7ff 100%);
+>>>>>>> main
 }
 
 img {
@@ -132,8 +137,13 @@ nav {
 /* HegaiGPT layout */
 
 body.hegai-gpt {
+<<<<<<< HEAD
+  background: #f7f7f8;
+  color: #0c1524;
+=======
   background: #343541;
   color: #ececf1;
+>>>>>>> main
 }
 
 .hegai-gpt .primary,
@@ -146,33 +156,72 @@ body.hegai-gpt {
   font-family: inherit;
 }
 
+<<<<<<< HEAD
+.chatgpt-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  background: #f7f7f8;
+=======
 .chatgpt-app {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 280px 1fr;
   background: #343541;
+>>>>>>> main
   color: inherit;
 }
 
 .sidebar {
   position: relative;
+<<<<<<< HEAD
+  background: #ffffff;
+  border-right: 1px solid #e1e4ec;
+=======
   background: #202123;
   color: #f4f4f5;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
+>>>>>>> main
   display: flex;
 }
 
 .sidebar-inner {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
+=======
   gap: 16px;
   padding: 20px 18px 24px;
+>>>>>>> main
   width: 100%;
 }
 
 .sidebar-header {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
+  gap: 16px;
+  padding: 24px 22px 18px;
+  border-bottom: 1px solid #eff1f6;
+}
+
+.workspace-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #eef1ff;
+  color: #3446c7;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.workspace-label {
+  opacity: 0.7;
+=======
   gap: 14px;
 }
 
@@ -182,6 +231,7 @@ body.hegai-gpt {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba(244, 244, 245, 0.68);
+>>>>>>> main
 }
 
 .sidebar-new {
@@ -189,6 +239,32 @@ body.hegai-gpt {
   align-items: center;
   gap: 8px;
   padding: 10px 14px;
+<<<<<<< HEAD
+  border-radius: 10px;
+  border: 1px solid rgba(16, 163, 127, 0.2);
+  background: #10a37f;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 12px 24px rgba(16, 163, 127, 0.18);
+}
+
+.sidebar-new:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 30px rgba(16, 163, 127, 0.22);
+}
+
+.sidebar-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f3f4fb;
+  border: 1px solid #e3e6f2;
+  color: #5b6479;
+=======
   border-radius: 8px;
   border: 1px solid rgba(244, 244, 245, 0.08);
   background: rgba(244, 244, 245, 0.05);
@@ -211,6 +287,7 @@ body.hegai-gpt {
   border-radius: 8px;
   border: 1px solid rgba(244, 244, 245, 0.08);
   background: rgba(32, 33, 35, 0.9);
+>>>>>>> main
 }
 
 .sidebar-search input {
@@ -222,6 +299,59 @@ body.hegai-gpt {
   color: inherit;
 }
 
+<<<<<<< HEAD
+.sidebar-search input::placeholder {
+  color: #9aa3b8;
+}
+
+.sidebar-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 22px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #727b91;
+}
+
+.sidebar-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sidebar-icon:hover {
+  background: rgba(114, 123, 145, 0.12);
+}
+
+.conversation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+=======
 .sidebar-search svg {
   color: rgba(244, 244, 245, 0.5);
 }
@@ -233,11 +363,42 @@ body.hegai-gpt {
   gap: 8px;
   overflow-y: auto;
   padding-right: 4px;
+>>>>>>> main
 }
 
 .conversation-item {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  background: #f8f9fd;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.conversation-item:hover {
+  border-color: #d6daf0;
+  box-shadow: 0 8px 18px rgba(17, 24, 39, 0.06);
+  transform: translateY(-1px);
+}
+
+.conversation-item.is-active {
+  border-color: #c8cff2;
+  background: #eef1ff;
+  box-shadow: 0 12px 28px rgba(59, 74, 200, 0.18);
+}
+
+.conversation-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+=======
   gap: 6px;
   padding: 12px 12px;
   border-radius: 8px;
@@ -247,22 +408,36 @@ body.hegai-gpt {
   text-align: left;
   cursor: pointer;
   transition: background 0.2s ease, border 0.2s ease;
+>>>>>>> main
 }
 
 .conversation-item strong {
   font-size: 14px;
+<<<<<<< HEAD
+  font-weight: 600;
+  color: #1f2937;
+=======
   font-weight: 500;
+>>>>>>> main
 }
 
 .conversation-item p {
   margin: 0;
   font-size: 12px;
+<<<<<<< HEAD
+  color: #6c7890;
+=======
   color: rgba(244, 244, 245, 0.6);
+>>>>>>> main
 }
 
 .conversation-item time {
   font-size: 11px;
+<<<<<<< HEAD
+  color: #9aa3b8;
+=======
   color: rgba(244, 244, 245, 0.4);
+>>>>>>> main
 }
 
 .conversation-tags {
@@ -270,12 +445,59 @@ body.hegai-gpt {
   flex-wrap: wrap;
   gap: 6px;
   margin-top: 4px;
+<<<<<<< HEAD
+=======
   color: rgba(244, 244, 245, 0.6);
+>>>>>>> main
 }
 
 .source-tag {
   display: inline-flex;
   align-items: center;
+<<<<<<< HEAD
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e8ecff;
+  color: #3b4ac8;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #1f2937;
+  font-size: 13px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-links a:hover {
+  background: #eef1ff;
+  color: #3446c7;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 18px 22px 24px;
+  border-top: 1px solid #eff1f6;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: #ffffff;
+=======
   padding: 2px 8px;
   border-radius: 999px;
   background: rgba(244, 244, 245, 0.08);
@@ -303,19 +525,38 @@ body.hegai-gpt {
 .sidebar-footer {
   border-top: 1px solid rgba(244, 244, 245, 0.08);
   padding-top: 12px;
+>>>>>>> main
 }
 
 .footer-title {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+<<<<<<< HEAD
+  color: #818ba3;
+=======
   color: rgba(244, 244, 245, 0.5);
   margin-bottom: 10px;
+>>>>>>> main
 }
 
 .insight-list {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
+  gap: 12px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.insight-item {
+  background: #f7f8fc;
+  border-radius: 14px;
+  border: 1px solid #e1e4ec;
+  padding: 12px 14px;
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
+=======
   gap: 10px;
   max-height: 220px;
   overflow-y: auto;
@@ -326,31 +567,79 @@ body.hegai-gpt {
   border-radius: 10px;
   padding: 10px 12px;
   border: 1px solid rgba(244, 244, 245, 0.08);
+>>>>>>> main
 }
 
 .insight-item strong {
   font-size: 13px;
+<<<<<<< HEAD
+  color: #1f2937;
+=======
+>>>>>>> main
 }
 
 .insight-item p {
   margin: 6px 0;
   font-size: 12px;
+<<<<<<< HEAD
+  color: #5d667c;
+=======
   color: rgba(244, 244, 245, 0.68);
+>>>>>>> main
 }
 
 .insight-item time {
   font-size: 11px;
+<<<<<<< HEAD
+  color: #9aa3b8;
+=======
   color: rgba(244, 244, 245, 0.46);
+>>>>>>> main
 }
 
 .insight-placeholder {
   margin: 0;
   font-size: 12px;
+<<<<<<< HEAD
+  color: #7a849c;
+=======
   color: rgba(244, 244, 245, 0.5);
+>>>>>>> main
 }
 
 .sidebar-placeholder {
   padding: 16px;
+<<<<<<< HEAD
+  border-radius: 12px;
+  border: 1px dashed #cbd2e6;
+  background: #f7f8fc;
+  color: #65708a;
+  font-size: 13px;
+}
+
+.account-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #e1e4ec;
+  background: #f7f8fc;
+}
+
+.account-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #111827;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.account-meta {
+=======
   border-radius: 8px;
   background: rgba(52, 53, 65, 0.6);
   border: 1px dashed rgba(244, 244, 245, 0.16);
@@ -390,11 +679,135 @@ body.hegai-gpt {
 }
 
 .top-bar-title {
+>>>>>>> main
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
+<<<<<<< HEAD
+.account-meta strong {
+  font-size: 13px;
+}
+
+.account-meta span {
+  font-size: 11px;
+  color: #7a849c;
+}
+
+.account-signout {
+  margin-left: auto;
+  border-radius: 8px;
+  border: 1px solid #d4d8e3;
+  padding: 6px 10px;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.account-signout:hover {
+  background: #eef1ff;
+  color: #3446c7;
+}
+
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f7f7f8;
+}
+
+.chat-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 28px;
+  background: rgba(247, 247, 248, 0.95);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid #e1e4ec;
+}
+
+.icon-button {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #d8dbe6;
+  background: #ffffff;
+  color: #1f2937;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon-button:hover {
+  background: #eef1ff;
+  box-shadow: 0 6px 18px rgba(17, 24, 39, 0.08);
+}
+
+.header-context {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.header-breadcrumb {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8b94ab;
+}
+
+.header-context h1 {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #0c1524;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-context p {
+  margin: 0;
+  font-size: 13px;
+  color: #626f85;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.model-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #d4d8e3;
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.model-chip:hover {
+  background: #eef1ff;
+=======
 .model-name {
   font-weight: 600;
   font-size: 15px;
@@ -403,16 +816,25 @@ body.hegai-gpt {
 .model-subtitle {
   font-size: 12px;
   color: rgba(236, 236, 241, 0.6);
+>>>>>>> main
 }
 
 .source-toggles {
   display: inline-flex;
   align-items: center;
+<<<<<<< HEAD
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: #eef1f8;
+  border: 1px solid #d4d8e3;
+=======
   gap: 8px;
   background: rgba(32, 33, 35, 0.8);
   padding: 4px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+>>>>>>> main
 }
 
 .source-toggle {
@@ -420,6 +842,23 @@ body.hegai-gpt {
   border-radius: 999px;
   border: none;
   background: transparent;
+<<<<<<< HEAD
+  font-size: 12px;
+  font-weight: 500;
+  color: #616b82;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.source-toggle.is-active {
+  background: #ffffff;
+  color: #0c1524;
+  box-shadow: 0 4px 10px rgba(12, 21, 36, 0.08);
+}
+
+.source-toggle:hover {
+  color: #0c1524;
+=======
   color: rgba(236, 236, 241, 0.7);
   font-size: 13px;
   cursor: pointer;
@@ -433,18 +872,37 @@ body.hegai-gpt {
 
 .source-toggle:hover {
   color: #fff;
+>>>>>>> main
 }
 
 .message-scroll {
   flex: 1;
   overflow-y: auto;
+<<<<<<< HEAD
+  padding: 28px 0 200px;
+=======
   padding: 24px 0 160px;
+>>>>>>> main
 }
 
 .empty-state {
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
+  padding: 40px 28px;
+}
+
+.empty-card {
+  max-width: 520px;
+  width: 100%;
+  padding: 42px 40px;
+  border-radius: 22px;
+  border: 1px solid #e1e4ec;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+  text-align: center;
+=======
   min-height: calc(100vh - 280px);
   padding: 0 24px;
 }
@@ -457,26 +915,58 @@ body.hegai-gpt {
   background: rgba(52, 53, 65, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+>>>>>>> main
 }
 
 .empty-card h1 {
   margin: 0 0 10px;
+<<<<<<< HEAD
+  font-size: 26px;
+  color: #111827;
+}
+
+.empty-card p {
+  margin: 0 0 22px;
+  color: #5d667c;
+  font-size: 15px;
+=======
   font-size: 24px;
 }
 
 .empty-card p {
   margin: 0 0 18px;
   color: rgba(236, 236, 241, 0.68);
+>>>>>>> main
 }
 
 .quick-prompts {
   display: flex;
   flex-wrap: wrap;
+<<<<<<< HEAD
+  gap: 12px;
+=======
   gap: 10px;
+>>>>>>> main
   justify-content: center;
 }
 
 .prompt-pill {
+<<<<<<< HEAD
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid #d4d8e3;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prompt-pill:hover {
+  background: #eef1ff;
+  border-color: #c9cfee;
+  box-shadow: 0 6px 18px rgba(59, 74, 200, 0.14);
+=======
   padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -490,13 +980,19 @@ body.hegai-gpt {
 .prompt-pill:hover {
   background: rgba(88, 88, 108, 0.85);
   color: #fff;
+>>>>>>> main
 }
 
 .message-list {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
+  gap: 22px;
+  padding: 0 28px 44px;
+=======
   gap: 18px;
   padding: 0 24px;
+>>>>>>> main
 }
 
 .message {
@@ -506,6 +1002,41 @@ body.hegai-gpt {
 }
 
 .message-avatar {
+<<<<<<< HEAD
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  background: #0c1524;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.message.user .message-avatar {
+  background: #d6d9e5;
+  color: #0c1524;
+}
+
+.message-bubble {
+  flex: 1;
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e1e4ec;
+  box-shadow: 0 24px 60px rgba(12, 21, 36, 0.08);
+  color: #1f2937;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.message.user .message-bubble {
+  background: #e8ebf7;
+  border-color: #d2d8ec;
+  box-shadow: none;
+=======
   width: 32px;
   height: 32px;
   border-radius: 4px;
@@ -536,12 +1067,55 @@ body.hegai-gpt {
 .message.user .message-bubble {
   background: rgba(52, 53, 65, 0.8);
   border-color: rgba(255, 255, 255, 0.04);
+>>>>>>> main
 }
 
 .message-bubble p {
   margin: 0 0 12px;
 }
 
+<<<<<<< HEAD
+.message-bubble p:last-child {
+  margin-bottom: 0;
+}
+
+.message-bubble ul {
+  margin: 0 0 12px 20px;
+}
+
+.message-bubble ul:last-child {
+  margin-bottom: 0;
+}
+
+.message-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  font-size: 12px;
+  color: #6a738b;
+}
+
+.ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #d4d8e3;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ghost:hover {
+  background: #eef1ff;
+  border-color: #c9cfee;
+  box-shadow: 0 6px 18px rgba(59, 74, 200, 0.16);
+=======
 .message-bubble p:last-child,
 .message-bubble ul:last-child,
 .message-bubble ol:last-child {
@@ -560,11 +1134,40 @@ body.hegai-gpt {
   gap: 12px;
   font-size: 11px;
   color: rgba(236, 236, 241, 0.5);
+>>>>>>> main
 }
 
 .follow-ups {
   display: flex;
   flex-wrap: wrap;
+<<<<<<< HEAD
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.follow-up {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #d4d8e3;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease, border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.follow-up:hover {
+  background: #eef1ff;
+  border-color: #c9cfee;
+  box-shadow: 0 6px 16px rgba(59, 74, 200, 0.14);
+}
+
+.prompt-shelf {
+  display: flex;
+  gap: 12px;
+  padding: 0 28px 28px;
+  flex-wrap: wrap;
+=======
   gap: 8px;
   margin-top: 12px;
 }
@@ -594,14 +1197,21 @@ body.hegai-gpt {
 
 .prompt-shelf:empty {
   display: none;
+>>>>>>> main
 }
 
 .composer {
   position: sticky;
   bottom: 0;
+<<<<<<< HEAD
+  padding: 24px 28px 26px;
+  background: linear-gradient(180deg, rgba(247, 247, 248, 0) 0%, rgba(247, 247, 248, 0.85) 45%, #f7f7f8 100%);
+  border-top: 1px solid #e1e4ec;
+=======
   padding: 16px 24px 24px;
   background: linear-gradient(180deg, rgba(52, 53, 65, 0) 0%, rgba(52, 53, 65, 0.92) 35%, #353740 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+>>>>>>> main
 }
 
 .composer form {
@@ -611,6 +1221,50 @@ body.hegai-gpt {
 .composer-surface {
   display: flex;
   align-items: flex-end;
+<<<<<<< HEAD
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid #d4d8e3;
+  background: #ffffff;
+  box-shadow: 0 28px 64px rgba(12, 21, 36, 0.08);
+}
+
+.composer textarea {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #0c1524;
+  font-size: 15px;
+  line-height: 1.6;
+  resize: none;
+  max-height: 168px;
+}
+
+.composer textarea::placeholder {
+  color: #8a94ac;
+}
+
+.composer textarea:focus {
+  outline: none;
+}
+
+.composer-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: none;
+  background: #f0f3ff;
+  color: #3446c7;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.composer-icon:hover {
+  background: #e1e7ff;
+=======
   gap: 12px;
   padding: 14px 16px;
   border-radius: 12px;
@@ -629,6 +1283,7 @@ body.hegai-gpt {
   color: inherit;
   flex: 1;
   max-height: 200px;
+>>>>>>> main
 }
 
 .composer-buttons {
@@ -637,6 +1292,24 @@ body.hegai-gpt {
   gap: 10px;
 }
 
+<<<<<<< HEAD
+.composer-send {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: none;
+  background: #10a37f;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.composer-send:hover {
+  background: #0c8a66;
+  box-shadow: 0 10px 24px rgba(16, 163, 127, 0.35);
+=======
 .composer-icon {
   width: 36px;
   height: 36px;
@@ -698,12 +1371,17 @@ body.hegai-gpt {
 .message-actions .ghost:hover {
   border-color: rgba(255, 255, 255, 0.28);
   color: #fff;
+>>>>>>> main
 }
 
 .composer-hint {
   margin: 12px 0 0;
   font-size: 12px;
+<<<<<<< HEAD
+  color: #7a849c;
+=======
   color: rgba(236, 236, 241, 0.48);
+>>>>>>> main
   text-align: center;
 }
 
@@ -711,18 +1389,37 @@ body.hegai-gpt {
   display: none;
 }
 
+<<<<<<< HEAD
+@media (max-width: 1280px) {
+  .chatgpt-shell {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+@media (max-width: 1100px) {
+  .chatgpt-shell {
+=======
 @media (max-width: 1100px) {
   .chatgpt-app {
+>>>>>>> main
     grid-template-columns: 1fr;
   }
 
   .sidebar {
     position: fixed;
     inset: 0 auto 0 0;
+<<<<<<< HEAD
+    width: min(300px, 82vw);
+    transform: translateX(-105%);
+    transition: transform 0.3s ease;
+    z-index: 30;
+    box-shadow: 12px 0 40px rgba(12, 21, 36, 0.16);
+=======
     width: min(280px, 80vw);
     transform: translateX(-105%);
     transition: transform 0.3s ease;
     z-index: 20;
+>>>>>>> main
   }
 
   .sidebar.is-open {
@@ -732,9 +1429,15 @@ body.hegai-gpt {
   .sidebar-backdrop {
     position: fixed;
     inset: 0;
+<<<<<<< HEAD
+    background: rgba(12, 21, 36, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 20;
+=======
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(2px);
     z-index: 10;
+>>>>>>> main
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -745,17 +1448,73 @@ body.hegai-gpt {
     opacity: 1;
     pointer-events: auto;
   }
+<<<<<<< HEAD
+}
 
+@media (max-width: 960px) {
+=======
+
+>>>>>>> main
   .icon-button {
     display: inline-flex;
   }
 
+<<<<<<< HEAD
+  .header-controls {
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .source-toggles {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+=======
   .source-toggles {
     margin-left: auto;
+>>>>>>> main
   }
 }
 
 @media (max-width: 768px) {
+<<<<<<< HEAD
+  .chat-header {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .header-context {
+    order: 2;
+  }
+
+  .header-controls {
+    order: 3;
+    width: 100%;
+  }
+
+  .source-toggles {
+    width: auto;
+  }
+
+  .message-list,
+  .prompt-shelf {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .message-scroll {
+    padding-bottom: 220px;
+  }
+
+  .composer {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .model-chip,
+=======
   .top-bar {
     gap: 10px;
   }
@@ -764,10 +1523,39 @@ body.hegai-gpt {
     flex: 1;
   }
 
+>>>>>>> main
   .source-toggles {
     display: none;
   }
 
+<<<<<<< HEAD
+  .message {
+    gap: 12px;
+  }
+
+  .message-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .message-bubble {
+    font-size: 14px;
+    padding: 16px;
+  }
+
+  .prompt-pill {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .composer-surface {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .composer-buttons {
+    justify-content: flex-end;
+=======
   .message-list,
   .prompt-shelf {
     padding: 0 16px;
@@ -818,6 +1606,7 @@ body.hegai-gpt {
 
   .composer-hint {
     font-size: 11px;
+>>>>>>> main
   }
 }
 .hero-eyebrow {

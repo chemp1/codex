@@ -68,6 +68,11 @@ const elements = {
   sidebar: document.querySelector("#sidebar"),
   sidebarToggle: document.querySelector("#sidebar-toggle"),
   sidebarBackdrop: document.querySelector("#sidebar-backdrop"),
+<<<<<<< HEAD
+  activeTitle: document.querySelector("#active-conversation-title"),
+  activeMeta: document.querySelector("#active-conversation-meta"),
+=======
+>>>>>>> main
   messageList: document.querySelector("#message-list"),
   messageScroll: document.querySelector("#message-scroll"),
   emptyState: document.querySelector("#empty-state"),
@@ -241,14 +246,23 @@ function ensureDemoConversation() {
   if (state.conversations.length) return;
 
   const now = Date.now();
+<<<<<<< HEAD
+  const heroConversation = createConversation();
+  heroConversation.title = "Как HegaiGPT помогает";
+=======
   const conversation = createConversation();
   conversation.title = "Как HegaiGPT помогает";
+>>>>>>> main
 
   const intro = createMessage(
     "assistant",
     "Привет! Я помогу ориентироваться в активностях heg.ai, подсвечу встречи и интересных участников, а скоро подключу живые данные."
   );
+<<<<<<< HEAD
+  intro.createdAt = now - 1000 * 60 * 180;
+=======
   intro.createdAt = now - 1000 * 60 * 90;
+>>>>>>> main
   intro.followUps = [
     "Что ты знаешь про медиатеку?",
     "Кому задать вопрос про исследования?",
@@ -258,27 +272,125 @@ function ensureDemoConversation() {
     "user",
     "Собери дайджест по #weekly-sync за прошлую неделю"
   );
+<<<<<<< HEAD
+  question.createdAt = now - 1000 * 60 * 170;
+=======
   question.createdAt = now - 1000 * 60 * 80;
+>>>>>>> main
 
   const answer = createMessage(
     "assistant",
     "Вот краткий дайджест по #weekly-sync:\n- команда продуктов подготовила чек-лист к демо-дню;\n- Мария Новак поделилась прогрессом мультимодальной модели;\n- обсуждали, кого привлечь к enterprise-пилотам.\n\nМогу подсветить детали по задачам или собрать контакты спикеров."
   );
+<<<<<<< HEAD
+  answer.createdAt = now - 1000 * 60 * 168;
+=======
   answer.createdAt = now - 1000 * 60 * 78;
+>>>>>>> main
   answer.followUps = [
     "Покажи задачи к демо-дню",
     "Кто ведёт enterprise-пилоты?",
   ];
 
+<<<<<<< HEAD
+  const followUpQuestion = createMessage(
+    "user",
+    "А кто сейчас ведёт enterprise-пилоты?"
+  );
+  followUpQuestion.createdAt = now - 1000 * 60 * 160;
+
+  const followUpAnswer = createMessage(
+    "assistant",
+    "За enterprise-пилоты отвечает Игорь Синицын, он координирует подготовку предложений. Также подключены Launchpad и GTM-группа — могу собрать контакты."
+  );
+  followUpAnswer.createdAt = now - 1000 * 60 * 158;
+  followUpAnswer.followUps = [
+    "Собери контакты GTM-группы",
+    "Что планирует Launchpad?",
+  ];
+
+  heroConversation.messages.push(
+    intro,
+    question,
+    answer,
+    followUpQuestion,
+    followUpAnswer
+  );
+  heroConversation.createdAt = intro.createdAt;
+
+  const heroInsightCreatedAt = now - 1000 * 60 * 155;
+  heroConversation.insights.push({
+=======
   conversation.messages.push(intro, question, answer);
   conversation.createdAt = intro.createdAt;
 
   const insightCreatedAt = now - 1000 * 60 * 75;
   conversation.insights.push({
+>>>>>>> main
     id: crypto.randomUUID(),
     messageId: answer.id,
     title: "Дайджест недели heg.ai",
     content: truncate(answer.content, 220),
+<<<<<<< HEAD
+    createdAt: heroInsightCreatedAt,
+  });
+  heroConversation.insights.push({
+    id: crypto.randomUUID(),
+    messageId: followUpAnswer.id,
+    title: "Контакты по enterprise-пилотам",
+    content: truncate(followUpAnswer.content, 220),
+    createdAt: heroInsightCreatedAt + 120000,
+  });
+
+  heroConversation.updatedAt = heroInsightCreatedAt + 120000;
+
+  const onboardingConversation = createConversation();
+  onboardingConversation.title = "Онбординг новичков";
+  onboardingConversation.createdAt = now - 1000 * 60 * 300;
+  onboardingConversation.sources = ["profiles", "media"];
+
+  const onboardingQuestion = createMessage(
+    "user",
+    "Как познакомить нового участника с ключевыми ресурсами?"
+  );
+  onboardingQuestion.createdAt = now - 1000 * 60 * 295;
+
+  const onboardingAnswer = createMessage(
+    "assistant",
+    "Я бы предложил начать с welcome-документа и последней записи Town Hall. Для глубины — подборку " +
+      "'AI Product Foundations' и список менторов из профилей. Могу собрать персональную подборку по интересам участника."
+  );
+  onboardingAnswer.createdAt = now - 1000 * 60 * 292;
+  onboardingAnswer.followUps = [
+    "Дай ссылку на Town Hall",
+    "Кого посоветовать в менторы?",
+  ];
+
+  const onboardingSummary = createMessage(
+    "assistant",
+    "Собрала подборку материалов и контактов — отправила в закреплённый инсайт, чтобы не потерять."
+  );
+  onboardingSummary.createdAt = now - 1000 * 60 * 288;
+
+  onboardingConversation.messages.push(
+    onboardingQuestion,
+    onboardingAnswer,
+    onboardingSummary
+  );
+
+  const onboardingInsightCreatedAt = now - 1000 * 60 * 285;
+  onboardingConversation.insights.push({
+    id: crypto.randomUUID(),
+    messageId: onboardingAnswer.id,
+    title: "Первые шаги новичка",
+    content: truncate(onboardingAnswer.content, 220),
+    createdAt: onboardingInsightCreatedAt,
+  });
+  onboardingConversation.updatedAt = onboardingInsightCreatedAt;
+
+  state.conversations = [heroConversation, onboardingConversation];
+  state.activeConversationId = heroConversation.id;
+=======
     createdAt: insightCreatedAt,
   });
 
@@ -286,6 +398,7 @@ function ensureDemoConversation() {
 
   state.conversations = [conversation];
   state.activeConversationId = conversation.id;
+>>>>>>> main
   saveState();
 }
 
@@ -372,6 +485,10 @@ function renderSourceTag(source) {
 function renderActiveConversation() {
   const conversation = getActiveConversation();
   const hasMessages = conversation && conversation.messages.length > 0;
+<<<<<<< HEAD
+  updateHeader(conversation);
+=======
+>>>>>>> main
   elements.messageList.innerHTML = "";
   elements.promptSuggestions.innerHTML = "";
   elements.emptyState.style.display = hasMessages ? "none" : "";
@@ -411,6 +528,41 @@ function renderActiveConversation() {
   bindDynamicButtons();
 }
 
+<<<<<<< HEAD
+function updateHeader(conversation) {
+  if (!elements.activeTitle || !elements.activeMeta) return;
+  if (!conversation) {
+    elements.activeTitle.textContent = "Новый диалог";
+    elements.activeMeta.textContent =
+      "Готов отвечать на вопросы сообщества heg.ai";
+    return;
+  }
+
+  const title = conversation.title?.trim() || "Новый диалог";
+  elements.activeTitle.textContent = title;
+
+  const sourceList = (conversation.sources?.length
+    ? conversation.sources
+    : Array.from(state.activeSources)
+  ).map((source) => {
+    const label = renderSourceLabel(source);
+    return label.charAt(0).toUpperCase() + label.slice(1);
+  });
+
+  const sourcesText = sourceList.length
+    ? sourceList.join(", ")
+    : "источники по умолчанию";
+
+  const updatedLabel =
+    typeof conversation.updatedAt === "number"
+      ? formatRelativeTime(conversation.updatedAt)
+      : "только что";
+
+  elements.activeMeta.textContent = `Обновлено ${updatedLabel} · Источники: ${sourcesText}`;
+}
+
+=======
+>>>>>>> main
 function renderFollowUps(message) {
   if (!message.followUps?.length) return "";
   return `
