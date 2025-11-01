@@ -65,7 +65,11 @@ const elements = {
   insightList: document.querySelector("#insight-list"),
   newConversation: document.querySelector("#new-conversation"),
   search: document.querySelector("#conversation-search"),
+  sidebar: document.querySelector("#sidebar"),
+  sidebarToggle: document.querySelector("#sidebar-toggle"),
+  sidebarBackdrop: document.querySelector("#sidebar-backdrop"),
   messageList: document.querySelector("#message-list"),
+  messageScroll: document.querySelector("#message-scroll"),
   emptyState: document.querySelector("#empty-state"),
   emptyPrompts: document.querySelector("#empty-prompts"),
   promptSuggestions: document.querySelector("#prompt-suggestions"),
@@ -84,6 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderQuickPrompts(elements.emptyPrompts, quickPrompts);
 });
 
+const mobileBreakpoint = 1100;
+
 function bindEvents() {
   elements.newConversation?.addEventListener("click", () => {
     const conversation = createConversation();
@@ -93,6 +99,7 @@ function bindEvents() {
     renderConversations();
     renderActiveConversation();
     focusComposer();
+    closeSidebar();
   });
 
   elements.search?.addEventListener("input", (event) => {
@@ -144,6 +151,38 @@ function bindEvents() {
       }
     });
   });
+
+  elements.sidebarToggle?.addEventListener("click", () => {
+    if (elements.sidebar?.classList.contains("is-open")) {
+      closeSidebar();
+    } else {
+      openSidebar();
+    }
+  });
+
+  elements.sidebarBackdrop?.addEventListener("click", () => closeSidebar());
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= mobileBreakpoint) {
+      closeSidebar();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeSidebar();
+    }
+  });
+}
+
+function openSidebar() {
+  elements.sidebar?.classList.add("is-open");
+  elements.sidebarBackdrop?.classList.add("is-active");
+}
+
+function closeSidebar() {
+  elements.sidebar?.classList.remove("is-open");
+  elements.sidebarBackdrop?.classList.remove("is-active");
 }
 
 function renderQuickPrompts(container, prompts) {
@@ -309,6 +348,7 @@ function renderConversations() {
         saveState();
         renderConversations();
         renderActiveConversation();
+        closeSidebar();
       });
       container.appendChild(item);
     });
@@ -553,7 +593,8 @@ elements.composerInput?.addEventListener("input", () => {
 });
 
 function scrollMessagesToBottom() {
-  elements.messageList?.scrollTo({ top: elements.messageList.scrollHeight, behavior: "smooth" });
+  const target = elements.messageScroll ?? elements.messageList;
+  target?.scrollTo({ top: target.scrollHeight, behavior: "smooth" });
 }
 
 function renderMarkdown(text) {

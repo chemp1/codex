@@ -13,89 +13,100 @@
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body class="hegai-gpt">
-    <div class="app-shell">
-      <aside class="app-sidebar">
-        <div class="sidebar-header">
-          <span class="logo">heg.ai community</span>
-          <p class="sidebar-subtitle">Разговоры с HegaiGPT</p>
-          <button class="primary" id="new-conversation">Новый диалог</button>
-          <label class="sidebar-search">
-            <input
-              type="search"
-              id="conversation-search"
-              placeholder="Поиск по истории"
-            />
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+    <div class="chatgpt-app">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+          <header class="sidebar-header">
+            <div class="sidebar-logo">heg.ai community</div>
+            <button class="sidebar-new" id="new-conversation">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 5v14m7-7H5"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Новый чат
+            </button>
+            <label class="sidebar-search">
+              <input
+                type="search"
+                id="conversation-search"
+                placeholder="Поиск по истории"
+              />
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="m20 20-4.35-4.35m1.35-3.65a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </label>
+          </header>
+
+          <nav class="conversation-list" id="conversation-list"></nav>
+
+          <footer class="sidebar-footer">
+            <div class="footer-title">Сохранённые инсайты</div>
+            <div class="insight-list" id="insight-list"></div>
+          </footer>
+        </div>
+      </aside>
+      <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+      <main class="conversation-area">
+        <header class="top-bar">
+          <button class="icon-button" id="sidebar-toggle" aria-label="Открыть меню">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
               <path
-                d="m20 20-4.35-4.35m1.35-3.65a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z"
+                d="M4 6h16M4 12h16M4 18h16"
                 stroke="currentColor"
                 stroke-width="1.6"
                 stroke-linecap="round"
-                stroke-linejoin="round"
               />
             </svg>
-          </label>
-        </div>
-
-        <div class="conversation-list" id="conversation-list"></div>
-
-        <div class="sidebar-footer">
-          <div class="footer-title">Сохранённые инсайты</div>
-          <div class="insight-list" id="insight-list"></div>
-        </div>
-      </aside>
-
-      <main class="chat-area">
-        <header class="chat-header">
-          <div>
-            <div class="chat-eyebrow">новый сервис heg.ai</div>
-            <h1>HegaiGPT</h1>
-            <p>
-              Ассистент знает о встречах, каналах, участниках и медиатеке сообщества.
-              Задавайте вопросы — мы вскоре подключим Supabase и дадим доступ к
-              живым данным.
-            </p>
+          </button>
+          <div class="top-bar-title">
+            <span class="model-name">HegaiGPT</span>
+            <span class="model-subtitle">ассистент сообщества heg.ai</span>
           </div>
           <div class="source-toggles" id="source-toggles">
-            <button class="source-toggle is-active" data-source="chats">
-              <span>Чаты</span>
-              <small>обновления и резюме</small>
-            </button>
-            <button class="source-toggle is-active" data-source="profiles">
-              <span>Профили</span>
-              <small>экспертиза участников</small>
-            </button>
-            <button class="source-toggle is-active" data-source="media">
-              <span>Медиатека</span>
-              <small>шоукейсы и записи</small>
-            </button>
+            <button class="source-toggle is-active" data-source="chats">Чаты</button>
+            <button class="source-toggle is-active" data-source="profiles">Профили</button>
+            <button class="source-toggle is-active" data-source="media">Медиатека</button>
           </div>
         </header>
 
-        <section class="chat-body">
+        <section class="message-scroll" id="message-scroll">
           <div class="empty-state" id="empty-state">
             <div class="empty-card">
-              <h2>Что умеет HegaiGPT</h2>
-              <ul>
-                <li>находит релевантные обсуждения в каналах и чатах;</li>
-                <li>сводит в краткие дайджесты активности участников;</li>
-                <li>ищет выступления и заметки в медиатеке.</li>
-              </ul>
+              <h1>Какой у вас вопрос?</h1>
+              <p>HegaiGPT ищет ответы в чатах, профилях и медиатеке сообщества.</p>
               <div class="quick-prompts" id="empty-prompts"></div>
             </div>
           </div>
 
           <div class="message-list" id="message-list"></div>
-          <div class="prompt-tray quick-prompts" id="prompt-suggestions"></div>
         </section>
 
-        <section class="chat-composer">
+        <section class="prompt-shelf" id="prompt-suggestions"></section>
+
+        <footer class="composer">
           <form id="composer-form" autocomplete="off">
             <div class="composer-surface">
               <textarea
@@ -103,14 +114,20 @@
                 rows="1"
                 placeholder="Спросите, что происходило в сообществе на этой неделе..."
               ></textarea>
-              <div class="composer-actions">
-                <button type="button" class="ghost" id="insert-summary">
+              <div class="composer-buttons">
+                <button
+                  type="button"
+                  class="composer-icon"
+                  id="insert-summary"
+                  aria-label="Вставить шаблон отчёта"
+                  title="Вставить шаблон отчёта"
+                >
                   <svg
                     width="18"
                     height="18"
                     viewBox="0 0 24 24"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
                   >
                     <path
                       d="M17 9h-5m5 4h-5m-1-8H7a2 2 0 0 0-2 2v10l3.5-2 3.5 2 3.5-2 3.5 2V7a2 2 0 0 0-2-2Z"
@@ -120,16 +137,14 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  Вставить шаблон отчёта
                 </button>
-                <button type="submit" class="primary">
-                  Отправить
+                <button type="submit" class="composer-send" aria-label="Отправить">
                   <svg
-                    width="18"
-                    height="18"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
                   >
                     <path
                       d="m5 12 14-7-3.5 7L19 19 5 12Z"
@@ -143,7 +158,10 @@
               </div>
             </div>
           </form>
-        </section>
+          <p class="composer-hint">
+            HegaiGPT готовится к подключению живых данных Supabase. Ответы сейчас демонстрационные.
+          </p>
+        </footer>
       </main>
     </div>
 
