@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body class="hegai-gpt">
+<<<<<<< HEAD
     <div class="chatgpt-shell">
       <aside class="sidebar" id="sidebar">
         <div class="sidebar-inner">
@@ -23,6 +24,21 @@
             </div>
             <button class="sidebar-new" id="new-conversation" type="button">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+=======
+    <div class="chatgpt-app">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+          <header class="sidebar-header">
+            <div class="sidebar-logo">heg.ai community</div>
+            <button class="sidebar-new" id="new-conversation">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                aria-hidden="true"
+              >
+>>>>>>> main
                 <path
                   d="M12 5v14m7-7H5"
                   stroke="currentColor"
@@ -33,7 +49,22 @@
               Новый чат
             </button>
             <label class="sidebar-search">
+<<<<<<< HEAD
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+=======
+              <input
+                type="search"
+                id="conversation-search"
+                placeholder="Поиск по истории"
+              />
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+>>>>>>> main
                 <path
                   d="m20 20-4.35-4.35m1.35-3.65a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z"
                   stroke="currentColor"
@@ -42,6 +73,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
+<<<<<<< HEAD
               <input type="search" id="conversation-search" placeholder="Поиск по истории" />
             </label>
           </div>
@@ -96,11 +128,22 @@
               </div>
               <button type="button" class="ghost account-signout">Выйти</button>
             </div>
+=======
+            </label>
+          </header>
+
+          <nav class="conversation-list" id="conversation-list"></nav>
+
+          <footer class="sidebar-footer">
+            <div class="footer-title">Сохранённые инсайты</div>
+            <div class="insight-list" id="insight-list"></div>
+>>>>>>> main
           </footer>
         </div>
       </aside>
       <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
 
+<<<<<<< HEAD
       <main class="chat-panel">
         <header class="chat-header">
           <button class="icon-button" id="sidebar-toggle" aria-label="Открыть меню">
@@ -148,14 +191,41 @@
                 <path d="M12 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm0 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm0 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill="currentColor" />
               </svg>
             </button>
+=======
+      <main class="conversation-area">
+        <header class="top-bar">
+          <button class="icon-button" id="sidebar-toggle" aria-label="Открыть меню">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+              <path
+                d="M4 6h16M4 12h16M4 18h16"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+          <div class="top-bar-title">
+            <span class="model-name">HegaiGPT</span>
+            <span class="model-subtitle">ассистент сообщества heg.ai</span>
+          </div>
+          <div class="source-toggles" id="source-toggles">
+            <button class="source-toggle is-active" data-source="chats">Чаты</button>
+            <button class="source-toggle is-active" data-source="profiles">Профили</button>
+            <button class="source-toggle is-active" data-source="media">Медиатека</button>
+>>>>>>> main
           </div>
         </header>
 
         <section class="message-scroll" id="message-scroll">
           <div class="empty-state" id="empty-state">
             <div class="empty-card">
+<<<<<<< HEAD
               <h1>Спроси HegaiGPT</h1>
               <p>Ассистент ищет ответы в чатах, профилях участников и медиатеке сообщества.</p>
+=======
+              <h1>Какой у вас вопрос?</h1>
+              <p>HegaiGPT ищет ответы в чатах, профилях и медиатеке сообщества.</p>
+>>>>>>> main
               <div class="quick-prompts" id="empty-prompts"></div>
             </div>
           </div>
@@ -168,6 +238,7 @@
         <footer class="composer">
           <form id="composer-form" autocomplete="off">
             <div class="composer-surface">
+<<<<<<< HEAD
               <button
                 type="button"
                 class="composer-icon"
@@ -193,6 +264,45 @@
               <div class="composer-buttons">
                 <button type="submit" class="composer-send" aria-label="Отправить">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+=======
+              <textarea
+                id="composer-input"
+                rows="1"
+                placeholder="Спросите, что происходило в сообществе на этой неделе..."
+              ></textarea>
+              <div class="composer-buttons">
+                <button
+                  type="button"
+                  class="composer-icon"
+                  id="insert-summary"
+                  aria-label="Вставить шаблон отчёта"
+                  title="Вставить шаблон отчёта"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M17 9h-5m5 4h-5m-1-8H7a2 2 0 0 0-2 2v10l3.5-2 3.5 2 3.5-2 3.5 2V7a2 2 0 0 0-2-2Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button type="submit" class="composer-send" aria-label="Отправить">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+>>>>>>> main
                     <path
                       d="m5 12 14-7-3.5 7L19 19 5 12Z"
                       stroke="currentColor"
@@ -206,7 +316,11 @@
             </div>
           </form>
           <p class="composer-hint">
+<<<<<<< HEAD
             HegaiGPT готовится к подключению Supabase. Сейчас ответы демонстрационные.
+=======
+            HegaiGPT готовится к подключению живых данных Supabase. Ответы сейчас демонстрационные.
+>>>>>>> main
           </p>
         </footer>
       </main>

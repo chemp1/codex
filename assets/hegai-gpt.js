@@ -68,8 +68,11 @@ const elements = {
   sidebar: document.querySelector("#sidebar"),
   sidebarToggle: document.querySelector("#sidebar-toggle"),
   sidebarBackdrop: document.querySelector("#sidebar-backdrop"),
+<<<<<<< HEAD
   activeTitle: document.querySelector("#active-conversation-title"),
   activeMeta: document.querySelector("#active-conversation-meta"),
+=======
+>>>>>>> main
   messageList: document.querySelector("#message-list"),
   messageScroll: document.querySelector("#message-scroll"),
   emptyState: document.querySelector("#empty-state"),
@@ -243,14 +246,23 @@ function ensureDemoConversation() {
   if (state.conversations.length) return;
 
   const now = Date.now();
+<<<<<<< HEAD
   const heroConversation = createConversation();
   heroConversation.title = "Как HegaiGPT помогает";
+=======
+  const conversation = createConversation();
+  conversation.title = "Как HegaiGPT помогает";
+>>>>>>> main
 
   const intro = createMessage(
     "assistant",
     "Привет! Я помогу ориентироваться в активностях heg.ai, подсвечу встречи и интересных участников, а скоро подключу живые данные."
   );
+<<<<<<< HEAD
   intro.createdAt = now - 1000 * 60 * 180;
+=======
+  intro.createdAt = now - 1000 * 60 * 90;
+>>>>>>> main
   intro.followUps = [
     "Что ты знаешь про медиатеку?",
     "Кому задать вопрос про исследования?",
@@ -260,18 +272,27 @@ function ensureDemoConversation() {
     "user",
     "Собери дайджест по #weekly-sync за прошлую неделю"
   );
+<<<<<<< HEAD
   question.createdAt = now - 1000 * 60 * 170;
+=======
+  question.createdAt = now - 1000 * 60 * 80;
+>>>>>>> main
 
   const answer = createMessage(
     "assistant",
     "Вот краткий дайджест по #weekly-sync:\n- команда продуктов подготовила чек-лист к демо-дню;\n- Мария Новак поделилась прогрессом мультимодальной модели;\n- обсуждали, кого привлечь к enterprise-пилотам.\n\nМогу подсветить детали по задачам или собрать контакты спикеров."
   );
+<<<<<<< HEAD
   answer.createdAt = now - 1000 * 60 * 168;
+=======
+  answer.createdAt = now - 1000 * 60 * 78;
+>>>>>>> main
   answer.followUps = [
     "Покажи задачи к демо-дню",
     "Кто ведёт enterprise-пилоты?",
   ];
 
+<<<<<<< HEAD
   const followUpQuestion = createMessage(
     "user",
     "А кто сейчас ведёт enterprise-пилоты?"
@@ -299,10 +320,18 @@ function ensureDemoConversation() {
 
   const heroInsightCreatedAt = now - 1000 * 60 * 155;
   heroConversation.insights.push({
+=======
+  conversation.messages.push(intro, question, answer);
+  conversation.createdAt = intro.createdAt;
+
+  const insightCreatedAt = now - 1000 * 60 * 75;
+  conversation.insights.push({
+>>>>>>> main
     id: crypto.randomUUID(),
     messageId: answer.id,
     title: "Дайджест недели heg.ai",
     content: truncate(answer.content, 220),
+<<<<<<< HEAD
     createdAt: heroInsightCreatedAt,
   });
   heroConversation.insights.push({
@@ -361,6 +390,15 @@ function ensureDemoConversation() {
 
   state.conversations = [heroConversation, onboardingConversation];
   state.activeConversationId = heroConversation.id;
+=======
+    createdAt: insightCreatedAt,
+  });
+
+  conversation.updatedAt = insightCreatedAt;
+
+  state.conversations = [conversation];
+  state.activeConversationId = conversation.id;
+>>>>>>> main
   saveState();
 }
 
@@ -447,7 +485,10 @@ function renderSourceTag(source) {
 function renderActiveConversation() {
   const conversation = getActiveConversation();
   const hasMessages = conversation && conversation.messages.length > 0;
+<<<<<<< HEAD
   updateHeader(conversation);
+=======
+>>>>>>> main
   elements.messageList.innerHTML = "";
   elements.promptSuggestions.innerHTML = "";
   elements.emptyState.style.display = hasMessages ? "none" : "";
@@ -487,6 +528,7 @@ function renderActiveConversation() {
   bindDynamicButtons();
 }
 
+<<<<<<< HEAD
 function updateHeader(conversation) {
   if (!elements.activeTitle || !elements.activeMeta) return;
   if (!conversation) {
@@ -519,6 +561,8 @@ function updateHeader(conversation) {
   elements.activeMeta.textContent = `Обновлено ${updatedLabel} · Источники: ${sourcesText}`;
 }
 
+=======
+>>>>>>> main
 function renderFollowUps(message) {
   if (!message.followUps?.length) return "";
   return `
